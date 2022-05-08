@@ -13,7 +13,7 @@ local client = require(game.Players.LocalPlayer.PlayerGui.Main.MainClient.Specia
 local VirtualInputManager = game:GetService('VirtualInputManager')
 local died = false
 local npcdied = false
-if game.PlaceId == 4042427666 or 5113678354  then
+if game.PlaceId == 4042427666 or game.PlaceId == 5113678354  then
 local mobs = game:GetService("Workspace").Scriptable.SpawnedMobs
 end
 --algunos ciclos
