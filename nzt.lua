@@ -7,7 +7,6 @@ local playerl = {}
 local tp
 local random = math.random(1,2)
 local l
-local mobs = game:GetService("Workspace").Scriptable.SpawnedMobs
 local mob1
 local mobP
 local client = require(game.Players.LocalPlayer.PlayerGui.Main.MainClient.SpecialsClient)
