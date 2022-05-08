@@ -292,14 +292,13 @@ FarmMobs1:addToggle({
     callback = function(AutoFarm)
         getgenv().toggle6 = AutoFarm
         if getgenv().toggle6 == true then
-        local mobs = game:GetService("Workspace").Scriptable.SpawnedMobs
         if game.PlaceId == 4042427666 then
         while wait() do
             if getgenv().toggle6 == true then
                 if died == true then
                     wait(6)
                 end
-                for i, v in pairs(mobs:GetChildren()) do
+                for i, v in pairs(game:GetService("Workspace").Scriptable.SpawnedMobs:GetChildren()) do
                     if v.Name == mob1  then
                         for i2, v2 in pairs(v:GetChildren()) do
                             if  v2.Name == "Hitpart" then
@@ -323,7 +322,7 @@ FarmMobs1:addToggle({
                         died = true
                     end) 
                     died = false          
-                    mobs.ChildRemoved:Connect(function(mb)
+                    game:GetService("Workspace").Scriptable.SpawnedMobs.ChildRemoved:Connect(function(mb)
                             if mb == mobP.Parent then
                                 npcdied = true
                             end
@@ -370,14 +369,13 @@ FarmMobs2:addToggle({
     callback = function(AutoFarm)
         getgenv().toggle7 = AutoFarm
         if getgenv().toggle7 == true then
-        local mobs = game:GetService("Workspace").Scriptable.SpawnedMobs
         if game.PlaceId == 5113678354 then
         while wait() do
             if getgenv().toggle7 == true then
                 if died == true then
                     wait(6)
                 end
-                for i, v in pairs(mobs:GetChildren()) do
+                for i, v in pairs(game:GetService("Workspace").Scriptable.SpawnedMobs:GetChildren()) do
                     if v.Name == mob1  then
                         for i2, v2 in pairs(v:GetChildren()) do
                             if  v2.Name == "Hitpart" then
@@ -401,7 +399,7 @@ FarmMobs2:addToggle({
                         died = true
                     end) 
                     died = false          
-                    mobs.ChildRemoved:Connect(function(mb)
+                    game:GetService("Workspace").Scriptable.SpawnedMobs.ChildRemoved:Connect(function(mb)
                             if mb == mobP.Parent then
                                 npcdied = true
                             end
