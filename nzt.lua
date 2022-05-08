@@ -14,7 +14,6 @@ local client = require(game.Players.LocalPlayer.PlayerGui.Main.MainClient.Specia
 local VirtualInputManager = game:GetService('VirtualInputManager')
 local died = false
 local npcdied = false
-local transform = false
 --algunos ciclos
 wait(1)
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
@@ -45,28 +44,24 @@ local Themes = {
     Accent = Color3.fromRGB(10, 10, 10),
     LightContrast = Color3.fromRGB(20, 20, 20),
     DarkContrast = Color3.fromRGB(14, 14, 14),  
-    TextColor = Color3.fromRGB(255, 0, 0)
+    TextColor = Color3.fromRGB(255, 153, 0)
 }
 
 local Training1 = UI:addPage({
     title = "Training",
-    icon = 9574083105
+    icon = 5012544693
 })
 local Spins = UI:addPage({
     title = "Infinite Spins",
-    icon = 9573898432
+    icon = 5012544693
 })
 local Teleport1 = UI:addPage({
     title = "Teleport",
-    icon = 9573858567 
+    icon = 5012544693
 })
 local Players1 = UI:addPage({
     title = "Players",
-    icon = 9573930385
-})
-local Farm = UI:addPage({
-    title = "AutoFarm",
-    icon = 9573984012
+    icon = 5012544693
 })
 
 local TrainStrength = Training1:addSection({
@@ -92,12 +87,6 @@ local TeleportD = Teleport1:addSection({
 })
 local Conceal1 = Players1:addSection({
     title = "Total Power"
-})
-local FarmMobs1 = Farm:addSection({
-    title = "AutoFarm Mobs Dimension 1"
-})
-local FarmMobs2 = Farm:addSection({
-    title = "AutoFarm Mobs Dimension 2"
 })
 wait(1)
 TrainStrength:addToggle({
@@ -284,160 +273,6 @@ Conceal1:addButton({
             end
     end
 })
-FarmMobs1:addDropdown({
-    title = "Mobs",
-    list = {"Weak Ninja","Masked Ninja","Strong Ninja","Bain","Marado","Small Crystal","Large Crystal",},
-    callback = function(mob)
-        mob1 = mob
-    end
-})
-FarmMobs1:addToggle({
-    title = "Farm",
-    callback = function(AutoFarm)
-        getgenv().toggle6 = AutoFarm
-        if getgenv().toggle6 == true then
-        if game.PlaceId == 4042427666 then
-        while wait() do
-            if getgenv().toggle6 == true then
-                if died == true then
-                    wait(6)
-                end
-                for i, v in pairs(mobs:GetChildren()) do
-                    if v.Name == mob1  then
-                        for i2, v2 in pairs(v:GetChildren()) do
-                            if  v2.Name == "Hitpart" then
-                                mobP = v2
-                            end
-                        end
-                    end
-                end
-                 if npcdied == false or died == true then
-                for i, v in pairs(debug.getupvalues(client.UpdateFruits)[2]["Data"]["Powers"]) do
-                    if v == "67" or v == "56" or v == "55" 
-                    or v == "43" or v == "27" or v == "23"
-                    or v == "21" or v == "13" or v == "9"   then
-                        VirtualInputManager:SendKeyEvent(true, i, false, game)
-                        wait()
-                        VirtualInputManager:SendKeyEvent(false, i, false, game)
-                    end
-                end
-                    end
-                    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function()
-                        died = true
-                    end) 
-                    died = false          
-                    mobs.ChildRemoved:Connect(function(mb)
-                            if mb == mobP.Parent then
-                                npcdied = true
-                            end
-                     end)
-                    npcdied = false
-                    local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
-                    local location = CFrame.new(mobP.Position)
-                    local humanoid = game.Players.LocalPlayer.Character.Humanoid
-                    pl.CFrame = location
-                    wait(2)
-                    repeat
-                        local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
-                        local location = CFrame.new(mobP.Position)
-                        local humanoid = game.Players.LocalPlayer.Character.Humanoid
-                        pl.CFrame = location
-                        for i, v in pairs(debug.getupvalues(client.UpdateFruits)[2]["Data"]["Powers"]) do
-                            if v == "67" or v == "56" or v == "55" 
-                            or v == "43" or v == "27" or v == "23"
-                            or v == "21" or v == "13" or v == "9" or v == "17"   then
-                                else
-                                    VirtualInputManager:SendKeyEvent(true, i, false, game)
-                                    wait()
-                                    VirtualInputManager:SendKeyEvent(false, i, false, game)
-                            end
-                            end 
-     
-                        until died == true or  getgenv().toggle6 == false or  npcdied == true     
-            end
-        end
-    else game.StarterGui:SetCore("SendNotification",{Title = "Bruh", Text = "You're not in dimension 1, are you stupid or what?", Duration = 5}) 
-    end
-    end
-end
-})
-FarmMobs2:addDropdown({
-    title = "Mobs",
-    list = {"Seed","Kappa","Jinu Squad","Mito","Boo","Small Namekian Crystal",},
-    callback = function(mob)
-        mob1 = mob
-    end
-})
-FarmMobs2:addToggle({
-    title = "Farm",
-    callback = function(AutoFarm)
-        getgenv().toggle7 = AutoFarm
-        if getgenv().toggle7 == true then
-        if game.PlaceId == 5113678354 then
-        while wait() do
-            if getgenv().toggle7 == true then
-                if died == true then
-                    wait(6)
-                end
-                for i, v in pairs(mobs:GetChildren()) do
-                    if v.Name == mob1  then
-                        for i2, v2 in pairs(v:GetChildren()) do
-                            if  v2.Name == "Hitpart" then
-                                mobP = v2
-                            end
-                        end
-                    end
-                end
-                 if npcdied == false or died == true then
-                for i, v in pairs(debug.getupvalues(client.UpdateFruits)[2]["Data"]["Powers"]) do
-                    if v == "67" or v == "56" or v == "55" 
-                    or v == "43" or v == "27" or v == "23"
-                    or v == "21" or v == "13" or v == "9"   then
-                        VirtualInputManager:SendKeyEvent(true, i, false, game)
-                        wait()
-                        VirtualInputManager:SendKeyEvent(false, i, false, game)
-                    end
-                end
-                    end
-                    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(function()
-                        died = true
-                    end) 
-                    died = false          
-                    mobs.ChildRemoved:Connect(function(mb)
-                            if mb == mobP.Parent then
-                                npcdied = true
-                            end
-                     end)
-                    npcdied = false
-                    local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
-                    local location = CFrame.new(mobP.Position)
-                    local humanoid = game.Players.LocalPlayer.Character.Humanoid
-                    pl.CFrame = location
-                    wait(2)
-                    repeat
-                        local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
-                        local location = CFrame.new(mobP.Position)
-                        local humanoid = game.Players.LocalPlayer.Character.Humanoid
-                        pl.CFrame = location
-                        for i, v in pairs(debug.getupvalues(client.UpdateFruits)[2]["Data"]["Powers"]) do
-                            if v == "67" or v == "56" or v == "55" 
-                            or v == "43" or v == "27" or v == "23"
-                            or v == "21" or v == "13" or v == "9" or v == "17"   then
-                                else
-                                    VirtualInputManager:SendKeyEvent(true, i, false, game)
-                                    wait()
-                                    VirtualInputManager:SendKeyEvent(false, i, false, game)
-                            end
-                            end 
-     
-                        until died == true or  getgenv().toggle7 == false or  npcdied == true     
-            end
-        end
-    else game.StarterGui:SetCore("SendNotification",{Title = "Bruh", Text = "You're not in dimension 2, are you stupid or what?", Duration = 5}) 
-    end
-    end
-end
-})
 
 
 for i, v in pairs(Themes) do
@@ -460,11 +295,11 @@ wait(1)
 vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 wait(1)
-bc = BrickColor.new("Toothpaste")
+bc = BrickColor.new("Lime green")
 
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
 
-Text = "[Scripter][Matrixplayer]: NEW UPDATEE BOYSSSSSS!!.";
+Text = "[Scripter][Matrixplayer]: YO!!.";
 
 Font = Enum.Font.Highway;
 
@@ -472,11 +307,11 @@ Color = bc.Color;
 
 FontSize = Enum.FontSize.Size8;
 })
-wait(4)
-bc = BrickColor.new("Toothpaste")
+wait(2)
+bc = BrickColor.new("Lime green")
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
     
-    Text = "[Scripter][Matrixplayer]: What a good time to update. ";
+    Text = "[Scripter][Matrixplayer]: I just updated the script, these are the new features. ";
     
     Font = Enum.Font.Highway;
     
@@ -484,24 +319,12 @@ game.StarterGui:SetCore("ChatMakeSystemMessage", {
     
     FontSize = Enum.FontSize.Size8;
     })
-    wait(4)
-bc = BrickColor.new("Toothpaste")
-game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    
-    Text = "[Scripter][Matrixplayer]: Anyway these are the new features. ";
-    
-    Font = Enum.Font.Highway;
-    
-    Color = bc.Color;
-    
-    FontSize = Enum.FontSize.Size8;
-    })
-    wait(4)
-    bc = BrickColor.new("New Yeller")
+    wait(5)
+    bc = BrickColor.new("Toothpaste")
 
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
 
-Text = "+AutoFarm Mobs dimension 1";
+Text = "+Train Sword";
 
 Font = Enum.Font.Highway;
 
@@ -509,12 +332,12 @@ Color = bc.Color;
 
 FontSize = Enum.FontSize.Size8;
 })
-wait(4)
-bc = BrickColor.new("New Yeller")
+wait(2)
+bc = BrickColor.new("Toothpaste")
 
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
 
-Text = "+AutoFarm Mobs dimension 2";
+Text = "+Infinite Spins Working(Only in dungeons)";
 
 Font = Enum.Font.Highway;
 
@@ -522,12 +345,12 @@ Color = bc.Color;
 
 FontSize = Enum.FontSize.Size8;
 })
-wait(4)
+wait(2)
 bc = BrickColor.new("Toothpaste")
 
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
 
-Text = "[Scripter][Matrixplayer]: Well, these are the 2 new features for now, I still want to add a few more things, but you know, the university leaves me without time☠️";
+Text = "+Enable Total Power of players";
 
 Font = Enum.Font.Highway;
 
@@ -535,12 +358,12 @@ Color = bc.Color;
 
 FontSize = Enum.FontSize.Size8;
 })
-wait(8)
-bc = BrickColor.new("Toothpaste")
+wait(2)
+bc = BrickColor.new("Lime green")
 
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
 
-Text = "[Scripter][Matrixplayer]: Cya";
+Text = "[Scripter][Matrixplayer]: Well that's all for now, I have to do homework -_-";
 
 Font = Enum.Font.Highway;
 
