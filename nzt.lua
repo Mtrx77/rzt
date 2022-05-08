@@ -13,9 +13,6 @@ local client = require(game.Players.LocalPlayer.PlayerGui.Main.MainClient.Specia
 local VirtualInputManager = game:GetService('VirtualInputManager')
 local died = false
 local npcdied = false
-if game.PlaceId == 4042427666 or game.PlaceId == 5113678354  then
-local mobs = game:GetService("Workspace").Scriptable.SpawnedMobs
-end
 --algunos ciclos
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
     if v ~= game.Players.LocalPlayer then 
@@ -295,6 +292,7 @@ FarmMobs1:addToggle({
     callback = function(AutoFarm)
         getgenv().toggle6 = AutoFarm
         if getgenv().toggle6 == true then
+        local mobs = game:GetService("Workspace").Scriptable.SpawnedMobs
         if game.PlaceId == 4042427666 then
         while wait() do
             if getgenv().toggle6 == true then
@@ -372,6 +370,7 @@ FarmMobs2:addToggle({
     callback = function(AutoFarm)
         getgenv().toggle7 = AutoFarm
         if getgenv().toggle7 == true then
+        local mobs = game:GetService("Workspace").Scriptable.SpawnedMobs
         if game.PlaceId == 5113678354 then
         while wait() do
             if getgenv().toggle7 == true then
