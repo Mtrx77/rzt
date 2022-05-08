@@ -14,6 +14,7 @@ local VirtualInputManager = game:GetService('VirtualInputManager')
 local died = false
 local npcdied = false
 --algunos ciclos
+wait(1)
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
     if v ~= game.Players.LocalPlayer then 
         table.insert(playerl,v.Name)
@@ -29,6 +30,7 @@ for i, v in pairs(game:GetService("Players"):GetPlayers()) do
      end
     end
     end)
+    wait(1)
 -- // Initialising the UI
 local Venyx = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stefanuk12/Venyx-UI-Library/main/source2.lua"))()
 local UI = Venyx.new({
