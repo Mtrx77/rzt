@@ -1,3 +1,4 @@
-archivo = open(https://github.com/Mtrx77/rzt/blob/main/prueba.txt,"w")
-archivo.write("xd")
-archivo.close()
+archivo = raw_input("prueba.txt")
+archivo1 = open(archivo,"w")
+archivo1.write("xd")
+archivo1.close()
