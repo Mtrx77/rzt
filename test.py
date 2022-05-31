@@ -1,3 +1,3 @@
-archivo = open("preba.txt","w")
+archivo = open(./prueba.txt,"w")
 archivo.write("xd")
 archivo.close()
