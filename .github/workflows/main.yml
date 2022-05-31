@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
       - name: Test
         run: |
-          py test.py
+          ./test.py
        
      
           
