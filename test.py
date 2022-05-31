@@ -10,7 +10,7 @@ def writeToFile(path, content):
   file.close()
   
   
-PATH_TO_MY_FILE = './example.txt'
+PATH_TO_MY_FILE = './prueba.txt'
 CONTENT_FOR_MY_FILE = 'Example\nThis is on line 2 of a text file.\n\nThe end.'
 
 writeToFile(PATH_TO_MY_FILE, CONTENT_FOR_MY_FILE)
