@@ -1,5 +1,0 @@
-UI:Destroy()
-Venyx:Destroy()
-game.Players.LocalPlayer.PlayerGui.Intro:WaitForChild("Folder"):Destroy()
-game.StarterGui:SetCore("SendNotification",{Title = "Exit", Text = "The Nam Hub Has Been Destroyed", Duration = 5})
-warn("Nam Hub Destroyed")
