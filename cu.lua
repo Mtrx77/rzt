@@ -1,16 +1,4 @@
-                        bc = BrickColor.new("Lime green")
-                        
-                        game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                        
-                        Text = "[Scripter][Matrixplayer]: Hi there";
-                        
-                        Font = Enum.Font.Highway;
-                        
-                        Color = bc.Color;
-                        
-                        FontSize = Enum.FontSize.Size8;
-                        })
-                        wait(3)
+
                         bc = BrickColor.new("Lime green")
                         
                         game.StarterGui:SetCore("ChatMakeSystemMessage", {
