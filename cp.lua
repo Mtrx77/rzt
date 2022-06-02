@@ -2,7 +2,7 @@ bc = BrickColor.new(0, 255, 242)
 
 game.StarterGui:SetCore("ChatMakeSystemMessage", {
 
-Text = "[Scripter][Matrixplayer]: First of all the fast chakra function is in testing, sometimes it usually gives more increases and sometimes not, after it finishes giving the increases, wait a while to use the function again or you can also rejoin.";
+Text = "[Scripter][Matrixplayer]: Sometimes it usually gives more increases and sometimes not, after it finishes giving the increases, wait a while to use the function again or you can also rejoin.";
 
 Font = Enum.Font.Highway;
 
